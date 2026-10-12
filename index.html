@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Lets CSS know JavaScript is running, so reveal animations never hide content without JS -->
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!-- ===== SEO ===== -->
+  <title>Abdullah Azam | Web Developer &amp; Aspiring UI/UX Designer</title>
+  <meta name="description" content="Portfolio of Abdullah Azam, a BS Information Technology student at Karakoram International University in Gilgit, building websites with HTML, CSS, JavaScript and Django, and designing interfaces in Figma.">
+  <meta name="author" content="Abdullah Azam">
+  <meta name="theme-color" content="#060a18">
+  <!-- TODO: replace with your real domain once the site is online -->
+  <link rel="canonical" href="https://your-username.github.io/">
+
+  <!-- Open Graph (link previews) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Abdullah Azam | Web Developer &amp; Aspiring UI/UX Designer">
+  <meta property="og:description" content="BS Information Technology student in Gilgit building web apps and designing interfaces in Figma.">
+  <meta property="og:url" content="https://your-username.github.io/">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- Fonts: system fonts are used as fallbacks if these fail to load -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&amp;family=Figtree:wght@400;500;600&amp;display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Structured data for search engines. Update sameAs when your real profile links are ready. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Abdullah Azam",
+    "jobTitle": "BS Information Technology Student and Web Developer",
+    "alumniOf": "Karakoram International University",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Gilgit",
+      "addressRegion": "Gilgit-Baltistan",
+      "addressCountry": "PK"
+    },
+    "sameAs": [
+      "https://github.com/your-username",
+      "https://www.linkedin.com/in/your-username"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ===== Icon sprite (reuse with <svg class="icon"><use href="#i-name"/></svg>) ===== -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-code" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
+      <symbol id="i-db" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></symbol>
+      <symbol id="i-git" viewBox="0 0 24 24"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></symbol>
+      <symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></symbol>
+      <symbol id="i-server" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></symbol>
+      <symbol id="i-terminal" viewBox="0 0 24 24"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></symbol>
+      <symbol id="i-pen" viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></symbol>
+      <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+      <symbol id="i-external" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></symbol>
+      <symbol id="i-send" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></symbol>
+      <symbol id="i-cart" viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></symbol>
+      <symbol id="i-activity" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></symbol>
+      <symbol id="i-user" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- ===== Header / navigation ===== -->
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a class="brand" href="#home" aria-label="Abdullah Azam, back to top">
+        <span class="brand-mark" aria-hidden="true">AA</span>
+        <span class="brand-name">Abdullah Azam</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+        <span class="visually-hidden">Menu</span>
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+      </button>
+
+      <nav id="nav-menu" class="nav-menu" aria-label="Primary">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#design">UI/UX Design</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a class="nav-cta" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ===== Hero ===== -->
+    <section id="home" class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="hero-hello">Hi, I'm</p>
+          <h1 id="hero-title">Abdullah Azam</h1>
+          <p class="hero-role">BS Information Technology Student | Aspiring UI/UX Designer | Web Developer</p>
+          <p class="hero-intro">
+            I'm a fourth-semester student at Karakoram International University in Gilgit.
+            I design interfaces in Figma and build them with HTML, CSS, JavaScript and Django,
+            with a focus on pages that are clear, fast and easy to use on any screen.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">View My Projects</a>
+            <a class="btn btn-ghost" href="#contact">Contact Me</a>
+          </div>
+
+          <ul class="social-list" aria-label="Social links">
+            <!-- TODO: replace the placeholder URLs below -->
+            <li><a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer" aria-label="GitHub (opens in a new tab)"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a></li>
+            <li><a href="https://www.linkedin.com/in/your-username" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+            <li><a href="mailto:your.email@example.com" aria-label="Send an email"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></a></li>
+          </ul>
+        </div>
+
+        <!-- Profile "frame": styled like a Figma frame because design and code are both part of the work -->
+        <figure class="frame" aria-label="Portrait of Abdullah Azam">
+          <span class="frame-label" aria-hidden="true">Abdullah Azam · Frame 1</span>
+          <div class="frame-canvas">
+            <img src="assets/images/profile.webp" alt="Portrait of Abdullah Azam." fetchpriority="high">
+            <span class="handle h-tl" aria-hidden="true"></span>
+            <span class="handle h-tr" aria-hidden="true"></span>
+            <span class="handle h-bl" aria-hidden="true"></span>
+            <span class="handle h-br" aria-hidden="true"></span>
+          </div>
+          <span class="frame-size" aria-hidden="true">Gilgit, Pakistan</span>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== About ===== -->
+    <section id="about" class="section" aria-labelledby="about-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="about-title">About me</h2>
+          <p class="lead">A student who likes the space between design and code.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="prose reveal">
+            <p>
+              I'm studying BS Information Technology at Karakoram International University (KIU) in Gilgit,
+              and I'm currently in my fourth semester. Through coursework and personal projects I've been
+              learning how a website goes from an idea, to a design, to something people can actually use.
+            </p>
+            <p>
+              I enjoy front-end work most: laying out a page, making it responsive, and refining small details
+              like spacing, contrast and keyboard access. I also work with Python, Django and SQL for the
+              back-end side of web applications.
+            </p>
+            <p>
+              I'm building my skills towards UI/UX design and web development, and I'm open to learning
+              opportunities, collaborations and internships.
+            </p>
+          </div>
+
+          <ul class="about-cards">
+            <li class="card reveal">
+              <svg class="icon icon-lg" aria-hidden="true"><use href="#i-code"/></svg>
+              <h3>Build</h3>
+              <p>Responsive websites and Django web applications.</p>
+            </li>
+            <li class="card reveal">
+              <svg class="icon icon-lg" aria-hidden="true"><use href="#i-pen"/></svg>
+              <h3>Design</h3>
+              <p>Wireframes, layouts and prototypes in Figma.</p>
+            </li>
+            <li class="card reveal">
+              <svg class="icon icon-lg" aria-hidden="true"><use href="#i-book"/></svg>
+              <h3>Learn</h3>
+              <p>Growing through university coursework and personal projects.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Skills ===== -->
+    <section id="skills" class="section section-alt" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="skills-title">Technical skills</h2>
+          <p class="lead">The tools I use to design, build and ship, grouped by what they're for.</p>
+        </div>
+
+        <div class="skill-groups">
+          <div class="skill-group reveal">
+            <h3>Front-end</h3>
+            <ul class="skill-grid">
+              <li class="skill"><svg class="icon" aria-hidden="true"><use href="#i-code"/></svg><div><strong>HTML5</strong><span>Semantic, accessible structure</span></div></li>
+              <li class="skill"><svg class="icon" aria-hidden="true"><use href="#i-layout"/></svg><div><strong>CSS3</strong><span>Layouts, Flexbox and Grid</span></div></li>
+              <li class="skill"><svg class="icon" aria-hidden="true"><use href="#i-terminal"/></svg><div><strong>JavaScript</strong><span>Interactivity and DOM scripting</span></div></li>
+              <li class="skill"><svg class="icon" aria-hidden="true"><use href="#i-layout"/></svg><div><strong>Bootstrap</strong><span>Component-based layouts</span></div></li>
+              <li class="skill"><svg class="icon" aria-hidden="true"><use href="#i-layout"/></svg><div><strong>Tailwind CSS</strong><span>Utility-first styling</span></div></li>
+              <li class="skill"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><div><strong>Responsive Web Design</strong><span>Mobile, tablet and desktop</span></div></li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal">
+            <h3>Back-end and data</h3>
+            <ul class="skill-grid">
+              <li class="skill"><svg class="icon" aria-hidden="true"><use href="#i-terminal"/></svg><div><strong>Python</strong><span>Scripting and application logic</span></div></li>
+              <li class="skill"><svg class="icon" aria-hidden="true"><use href="#i-server"/></svg><div><strong>Django</strong><span>Python web framework</span></div></li>
+              <li class="skill"><svg class="icon" aria-hidden="true"><use href="#i-db"/></svg><div><strong>SQL</strong><span>Relational databases and queries</span></div></li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal">
+            <h3>Design and workflow</h3>
+            <ul class="skill-grid">
+              <li class="skill"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg><div><strong>UI/UX Design</strong><span>Flows, wireframes and visual design</span></div></li>
+              <li class="skill"><svg class="icon" aria-hidden="true"><use href="#i-pen"/></svg><div><strong>Figma</strong><span>Prototyping and design systems</span></div></li>
+              <li class="skill"><svg class="icon" aria-hidden="true"><use href="#i-git"/></svg><div><strong>Git and GitHub</strong><span>Version control and collaboration</span></div></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Projects ===== -->
+    <section id="projects" class="section" aria-labelledby="projects-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="projects-title">Projects</h2>
+          <p class="lead">Things I've built, am building, or am planning. Each card says which stage it's at.</p>
+        </div>
+
+        <!--
+          Project card component. To add a project, copy one <li class="card project-card"> block.
+          TODO: replace the placeholder repository and demo URLs, and adjust badges and tags to match your real work.
+        -->
+        <ul class="project-grid">
+
+          <li class="card project-card reveal">
+            <div class="project-thumb" aria-hidden="true"><svg class="icon icon-xl"><use href="#i-cart"/></svg></div>
+            <div class="project-body">
+              <span class="badge">Software project</span>
+              <h3>Smart Sales Management System</h3>
+              <p>A web application for keeping track of products, stock, customers and sales in one place, with summary views to help a small shop understand what is selling.</p>
+              <ul class="tags" aria-label="Technologies">
+                <li>Python</li><li>Django</li><li>SQL</li>
+              </ul>
+            </div>
+            <div class="project-links">
+              <a class="link" href="https://github.com/your-username/smart-sales-management" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>Source code<span class="visually-hidden"> (placeholder link, opens in a new tab)</span></a>
+            </div>
+          </li>
+
+          <li class="card project-card reveal">
+            <div class="project-thumb" aria-hidden="true"><svg class="icon icon-xl"><use href="#i-user"/></svg></div>
+            <div class="project-body">
+              <span class="badge">This website</span>
+              <h3>Personal Portfolio Website</h3>
+              <p>The site you're on: a responsive, accessible portfolio written in plain HTML, CSS and JavaScript, with a dark theme and no build tools or dependencies.</p>
+              <ul class="tags" aria-label="Technologies">
+                <li>HTML5</li><li>CSS3</li><li>JavaScript</li>
+              </ul>
+            </div>
+            <div class="project-links">
+              <a class="link" href="https://github.com/your-username/portfolio" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>Source code<span class="visually-hidden"> (placeholder link, opens in a new tab)</span></a>
+            </div>
+          </li>
+
+          <li class="card project-card reveal">
+            <div class="project-thumb" aria-hidden="true"><svg class="icon icon-xl"><use href="#i-server"/></svg></div>
+            <div class="project-body">
+              <span class="badge">Learning project</span>
+              <h3>Django Web Application</h3>
+              <p>A Django project where I practise models, views, templates, forms and database-backed pages, following the framework's structure and conventions.</p>
+              <ul class="tags" aria-label="Technologies">
+                <li>Python</li><li>Django</li><li>SQL</li>
+              </ul>
+            </div>
+            <div class="project-links">
+              <a class="link" href="https://github.com/your-username/django-web-app" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>Source code<span class="visually-hidden"> (placeholder link, opens in a new tab)</span></a>
+            </div>
+          </li>
+
+          <li class="card project-card reveal">
+            <div class="project-thumb" aria-hidden="true"><svg class="icon icon-xl"><use href="#i-activity"/></svg></div>
+            <div class="project-body">
+              <span class="badge badge-idea">Final year project idea</span>
+              <h3>AI-Based Hospital Management and Disease Prediction System</h3>
+              <p>A planned system that would combine hospital management (patients, appointments, records) with a model that suggests possible conditions from symptoms. This is currently an idea and has not been built yet.</p>
+              <ul class="tags" aria-label="Planned technologies">
+                <li>Python</li><li>Django</li><li>SQL</li><li>Machine learning</li>
+              </ul>
+            </div>
+            <div class="project-links">
+              <span class="muted-note">Concept stage, no repository yet</span>
+            </div>
+          </li>
+
+          <li class="card project-card reveal">
+            <div class="project-thumb" aria-hidden="true"><svg class="icon icon-xl"><use href="#i-heart"/></svg></div>
+            <div class="project-body">
+              <span class="badge">Management system</span>
+              <h3>Sonikot Youth Welfare Management System</h3>
+              <p>A management system for a youth welfare organisation, designed to organise member records, events and activities so volunteers can find information quickly.</p>
+              <ul class="tags" aria-label="Technologies">
+                <li>Python</li><li>Django</li><li>SQL</li><li>Bootstrap</li>
+              </ul>
+            </div>
+            <div class="project-links">
+              <a class="link" href="https://github.com/your-username/sonikot-youth-welfare" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg>Source code<span class="visually-hidden"> (placeholder link, opens in a new tab)</span></a>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== UI/UX Design (Figma) ===== -->
+    <section id="design" class="section section-alt" aria-labelledby="design-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="design-title">UI/UX design in Figma</h2>
+          <p class="lead">I plan the experience first, then design it in Figma before writing code, so the build matches a clear plan.</p>
+        </div>
+
+        <!-- This really is a sequence, so numbers are used -->
+        <ol class="process">
+          <li class="process-step reveal">
+            <span class="process-num" aria-hidden="true">1</span>
+            <h3>Understand</h3>
+            <p>Define who the page is for and what they need to do, then map the key user flows.</p>
+          </li>
+          <li class="process-step reveal">
+            <span class="process-num" aria-hidden="true">2</span>
+            <h3>Wireframe</h3>
+            <p>Sketch low-fidelity layouts to settle structure and content order before styling.</p>
+          </li>
+          <li class="process-step reveal">
+            <span class="process-num" aria-hidden="true">3</span>
+            <h3>Design</h3>
+            <p>Build high-fidelity screens with Figma components, a colour palette and a type scale.</p>
+          </li>
+          <li class="process-step reveal">
+            <span class="process-num" aria-hidden="true">4</span>
+            <h3>Prototype and build</h3>
+            <p>Link screens into a clickable prototype, then translate the design into responsive code.</p>
+          </li>
+        </ol>
+
+        <h3 class="subheading">Design showcase</h3>
+        <p class="showcase-note">
+          These three frames are sample layouts that show the kind of work this section is for.
+          <strong>Replace each one with an exported image of your own Figma design</strong> (see the README).
+        </p>
+
+        <div class="showcase">
+          <!-- Frame 1: dashboard -->
+          <figure class="design-card reveal">
+            <div class="mock mock-dashboard" role="img" aria-label="Sample dashboard layout with a sidebar, summary cards and a bar chart">
+              <div class="m-side"><i></i><i></i><i></i><i></i></div>
+              <div class="m-main">
+                <div class="m-row"><b></b><b></b><b></b></div>
+                <div class="m-chart"><i style="height:40%"></i><i style="height:65%"></i><i style="height:50%"></i><i style="height:85%"></i><i style="height:60%"></i><i style="height:75%"></i></div>
+              </div>
+            </div>
+            <figcaption><strong>Dashboard layout</strong><span>Sample frame. Replace with your Figma export.</span></figcaption>
+          </figure>
+
+          <!-- Frame 2: mobile -->
+          <figure class="design-card reveal">
+            <div class="mock mock-mobile" role="img" aria-label="Sample mobile app screen with a header, a list of cards and a bottom navigation bar">
+              <div class="m-phone">
+                <div class="m-top"></div>
+                <div class="m-list"><b></b><b></b><b></b></div>
+                <div class="m-nav"><i></i><i></i><i></i></div>
+              </div>
+            </div>
+            <figcaption><strong>Mobile app screen</strong><span>Sample frame. Replace with your Figma export.</span></figcaption>
+          </figure>
+
+          <!-- Frame 3: design system -->
+          <figure class="design-card reveal">
+            <div class="mock mock-system" role="img" aria-label="Sample design system with colour swatches, a button and a text field">
+              <div class="m-swatches"><i></i><i></i><i></i><i></i></div>
+              <div class="m-btn"></div>
+              <div class="m-field"></div>
+            </div>
+            <figcaption><strong>Design system</strong><span>Sample frame. Replace with your Figma export.</span></figcaption>
+          </figure>
+        </div>
+
+        <p class="design-cta">
+          <!-- TODO: replace with your Figma profile or file link -->
+          <a class="btn btn-ghost" href="https://www.figma.com/@your-username" target="_blank" rel="noopener noreferrer">
+            View my Figma profile<span class="visually-hidden"> (placeholder link, opens in a new tab)</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg>
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== Education ===== -->
+    <section id="education" class="section" aria-labelledby="education-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="education-title">Education</h2>
+        </div>
+
+        <ol class="timeline">
+          <li class="timeline-item card reveal">
+            <h3>BS Information Technology</h3>
+            <p class="timeline-org">Karakoram International University (KIU), Gilgit</p>
+            <p class="timeline-meta">Currently in the 4th semester</p>
+            <p>Studying core information technology subjects while building web development and UI/UX design skills through personal projects.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section id="contact" class="section section-alt" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="section-head">
+          <h2 id="contact-title">Get in touch</h2>
+          <p class="lead">Have a question, an opportunity or a project idea? Send me a message.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <ul class="contact-list">
+              <!-- TODO: replace the placeholder email and profile links -->
+              <li><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:your.email@example.com">your.email@example.com</a></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg><a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer">github.com/your-username</a></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg><a href="https://www.linkedin.com/in/your-username" target="_blank" rel="noopener noreferrer">linkedin.com/in/your-username</a></li>
+              <li><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><span>Gilgit, Gilgit-Baltistan, Pakistan</span></li>
+            </ul>
+          </div>
+
+          <form id="contact-form" class="card form reveal" novalidate>
+            <p class="notice" id="form-notice">
+              <strong>Demo form:</strong> this form needs a backend (for example Django, Formspree or EmailJS) before messages can actually be delivered. Until then, please use the email link.
+            </p>
+
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-error">
+              <p class="error" id="name-error" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-error">
+              <p class="error" id="email-error" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label for="subject">Subject</label>
+              <input id="subject" name="subject" type="text" required aria-describedby="subject-error">
+              <p class="error" id="subject-error" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required aria-describedby="message-error"></textarea>
+              <p class="error" id="message-error" aria-live="polite"></p>
+            </div>
+
+            <button class="btn btn-primary" type="submit">
+              Send message
+              <svg class="icon" aria-hidden="true"><use href="#i-send"/></svg>
+            </button>
+
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year">2026</span> Abdullah Azam. All rights reserved.</p>
+      <ul class="social-list" aria-label="Social links">
+        <li><a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer" aria-label="GitHub (opens in a new tab)"><svg class="icon" aria-hidden="true"><use href="#i-github"/></svg></a></li>
+        <li><a href="https://www.linkedin.com/in/your-username" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"/></svg></a></li>
+        <li><a href="mailto:your.email@example.com" aria-label="Send an email"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg></a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
