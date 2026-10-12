@@ -7,5 +7,5 @@ window.SITE_CONFIG = {
   /* Public URL of the deployed Django contact API.
      Example: "https://yourname.pythonanywhere.com/api/contact/"
      Leave empty ("") and the form stays front-end only (no messages sent). */
-  contactEndpoint: ""
+  contactEndpoint: "https://abdullah123.pythonanywhere.com/api/contact/"
 };
