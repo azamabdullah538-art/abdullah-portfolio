@@ -7,6 +7,14 @@
 (function () {
   "use strict";
 
+  /* ------------------------------------------------------------------
+     Contact form backend.
+     Host the Django app in ./backend and paste its public URL here, e.g.
+       var CONTACT_ENDPOINT = "https://yourname.pythonanywhere.com/api/contact/";
+     Leave it empty ("") and the form stays front-end only.
+     ------------------------------------------------------------------ */
+  var CONTACT_ENDPOINT = "";
+
   /* ---------- Footer year ---------- */
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -148,23 +156,73 @@
         return;
       }
 
-      /* ------------------------------------------------------------------
-         BACKEND REQUIRED
-         Nothing is sent from here. To deliver real messages, connect a
-         service or your own backend, for example:
-
-         fetch("https://formspree.io/f/YOUR_FORM_ID", {
-           method: "POST",
-           headers: { "Accept": "application/json" },
-           body: new FormData(form)
-         }).then(...).catch(...);
-
-         Or post to a Django view (remember the CSRF token).
-         ------------------------------------------------------------------ */
-      if (statusEl) {
-        statusEl.textContent =
-          "Your details look good, but this demo form isn't connected to a backend, so no message was sent. Please use the email link instead.";
+      /* ----------------------------------------------------------------
+         Send the message to the Django backend. If no endpoint is set yet,
+         fall back to the notice so the form never pretends to have sent.
+         ---------------------------------------------------------------- */
+      if (!CONTACT_ENDPOINT) {
+        if (statusEl) {
+          statusEl.textContent =
+            "Your details look good, but the contact backend isn't configured yet. Please use the email link instead.";
+        }
+        return;
       }
+
+      var payload = {
+        name: form.elements.name.value.trim(),
+        email: form.elements.email.value.trim(),
+        subject: form.elements.subject.value.trim(),
+        message: form.elements.message.value.trim()
+      };
+
+      var submitBtn = form.querySelector('button[type="submit"]');
+      if (submitBtn) submitBtn.disabled = true;
+      if (statusEl) statusEl.textContent = "Sending…";
+
+      fetch(CONTACT_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(payload)
+      })
+        .then(function (response) {
+          return response
+            .json()
+            .catch(function () { return {}; })
+            .then(function (data) { return { ok: response.ok, data: data }; });
+        })
+        .then(function (result) {
+          if (result.ok && result.data.ok !== false) {
+            form.reset();
+            fields.forEach(function (input) { input.removeAttribute("aria-invalid"); });
+            if (statusEl) {
+              statusEl.textContent = result.data.message || "Thanks! Your message was received.";
+            }
+            return;
+          }
+
+          var serverErrors = result.data.errors || {};
+          var hasFieldError = false;
+          Object.keys(serverErrors).forEach(function (key) {
+            var errorEl = document.getElementById(key + "-error");
+            var input = document.getElementById(key);
+            if (errorEl) { errorEl.textContent = serverErrors[key]; hasFieldError = true; }
+            if (input) input.setAttribute("aria-invalid", "true");
+          });
+          if (statusEl) {
+            statusEl.textContent = hasFieldError
+              ? "Please fix the highlighted fields and try again."
+              : "Sorry, something went wrong. Please try again or use the email link.";
+          }
+        })
+        .catch(function () {
+          if (statusEl) {
+            statusEl.textContent =
+              "Couldn't reach the server. Please check your connection, try again, or use the email link.";
+          }
+        })
+        .then(function () {
+          if (submitBtn) submitBtn.disabled = false;
+        });
     });
   }
 })();
