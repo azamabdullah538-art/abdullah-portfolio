@@ -9,11 +9,12 @@
 
   /* ------------------------------------------------------------------
      Contact form backend.
-     Host the Django app in ./backend and paste its public URL here, e.g.
-       var CONTACT_ENDPOINT = "https://yourname.pythonanywhere.com/api/contact/";
-     Leave it empty ("") and the form stays front-end only.
+     The endpoint lives in ./js/config.js (window.SITE_CONFIG.contactEndpoint)
+     so it can be changed in one place. Leave it empty ("") and the form
+     stays front-end only.
      ------------------------------------------------------------------ */
-  var CONTACT_ENDPOINT = "";
+  var CONTACT_ENDPOINT =
+    (window.SITE_CONFIG && window.SITE_CONFIG.contactEndpoint) || "";
 
   /* ---------- Footer year ---------- */
   var yearEl = document.getElementById("year");

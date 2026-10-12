@@ -132,6 +132,18 @@ else:
     )
 CORS_ALLOW_METHODS = ["POST", "OPTIONS"]
 CORS_ALLOW_HEADERS = ["content-type", "accept"]
+CORS_ALLOW_CREDENTIALS = False
+
+# Server-side origin allow-list enforced by the contact view. CORS headers only
+# control what a *browser* is allowed to read; this rejects requests from other
+# origins at the server. Defaults to the CORS allow-list; override with
+# DJANGO_CONTACT_ALLOWED_ORIGINS.
+if not DEBUG:
+    CONTACT_ALLOWED_ORIGINS = env_list(
+        "DJANGO_CONTACT_ALLOWED_ORIGINS", CORS_ALLOWED_ORIGINS
+    )
+else:
+    CONTACT_ALLOWED_ORIGINS = []
 
 CSRF_TRUSTED_ORIGINS = env_list(
     "DJANGO_CSRF_TRUSTED_ORIGINS",

@@ -1,6 +1,7 @@
 import json
 import re
 
+from django.conf import settings
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
@@ -33,9 +34,28 @@ def _clean(value):
     return (value or "").strip()
 
 
+def _origin_allowed(request):
+    """Only accept requests coming from the portfolio's own origin(s).
+
+    In development every origin is allowed. In production the request's
+    ``Origin`` header must be in ``CONTACT_ALLOWED_ORIGINS``; requests with no
+    Origin header (e.g. curl, server-to-server) are rejected.
+    """
+    if settings.DEBUG:
+        return True
+    origin = request.headers.get("Origin")
+    allowed = getattr(settings, "CONTACT_ALLOWED_ORIGINS", [])
+    return bool(origin) and origin in allowed
+
+
 @csrf_exempt
 @require_http_methods(["POST", "OPTIONS"])
 def contact_submit(request):
+    if not _origin_allowed(request):
+        return JsonResponse(
+            {"ok": False, "error": "Origin not allowed."}, status=403
+        )
+
     if request.method == "OPTIONS":
         # django-cors-headers fills in the CORS headers for preflight.
         return JsonResponse({}, status=200)
